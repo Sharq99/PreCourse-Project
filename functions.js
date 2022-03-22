@@ -20,8 +20,12 @@
  */
 function sumOdds(numbers) {
   // Your code here
+  const odd = numbers.filter(number => number % 2 !== 0);
+  const initialValue = 0;
+  const sumWithInitial = odd.reduce((previousValue, currentValue) => previousValue + currentValue, initialValue);
+  return sumWithInitial;
 }
-// console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
+console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
 /**
  * characterCount(string, c):
@@ -38,8 +42,16 @@ function sumOdds(numbers) {
  */
 function characterCount(string, c) {
   // Your code here
+  //string.toLowerCase();
+  const str = string.split('');
+  const characters = str.filter(char => char === c);
+  // const num = str.forEach(char => 1);
+  // const initialValue = 0;
+  // const sumWithInitial = num.reduce((previousValue, currentValue) => previousValue + currentValue, initialValue);
+  // return sumWithInitial;
+  
 }
-// console.log(characterCount("Character Count is clever", "c"));
+console.log(characterCount("Character Count is clever", "c"));
 
 /**
  * largestIncrement(numbers):
