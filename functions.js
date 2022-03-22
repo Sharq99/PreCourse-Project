@@ -71,8 +71,16 @@ console.log(characterCount("Character Count is clever", "c"));
  */
 function largestIncrement(numbers) {
   // Your code here
+  let largest = 0;
+  const sumWithInitial = numbers.map((previousValue, currentValue) => previousValue - currentValue, 0);
+  for(let i = 0; i < sumWithInitial.length; i++){
+    if(sumWithInitial[i] > largest) {largest = sumWithInitial[i]}
+  }
+
+  return largest;
 }
 // console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+console.log(largestIncrement([1, 3, 7, 9, 12]));
 
 /**
  * afterX(numbers, x):
@@ -122,9 +130,17 @@ function abbreviate(firstName, lastName) {
  */
 function isUpperCase(string) {
   // Your code here
+
+  const str = string.split('');
+  //const str2 = string.toUpperCase().split('');
+  const check = str.filter(str2 => str2 != string.toUpperCase().split(''));
+  if(check === []) return true;
+  else return false;
+
+
 }
 
-// console.log(isUpperCase("JCREW"));
+console.log(isUpperCase("JCrEW"));
 
 /**
  * elementInArray(numbers, x):
@@ -142,7 +158,7 @@ function elementInArray(numbers, x) {
   if(found === x) return true;
   else return false;
 }
-// console.log(elementInArray([5, 6, 7], 8));
+console.log(elementInArray([5, 6, 7], 8));
 
 module.exports = {
   sumOdds,
