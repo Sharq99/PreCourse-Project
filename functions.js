@@ -87,6 +87,10 @@ function largestIncrement(numbers) {
  */
 function afterX(numbers, x) {
   // Your code here
+  const found = numbers.find(number => number === x);
+  const after = numbers.filter(number => number > found);
+  return after;
+
 }
 // console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
@@ -134,6 +138,9 @@ function isUpperCase(string) {
  */
 function elementInArray(numbers, x) {
   // Your code here
+  const found = numbers.find(number => number === x);
+  if(found === x) return true;
+  else return false;
 }
 // console.log(elementInArray([5, 6, 7], 8));
 
